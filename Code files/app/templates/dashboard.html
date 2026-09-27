@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Dashboard | PocketSmart AI{% endblock %}
+{% block content %}<section class="page-hero compact"><div class="container"><span class="eyebrow">YOUR DASHBOARD</span><h1>Welcome, {{ user.name }}!</h1><p>Choose a planner or revisit a recommendation you've already created.</p></div></section>
+<section class="section"><div class="container"><div class="dashboard-actions">
+<a class="dash-card" href="/home-planner"><div class="icon">⌂</div><h3>Home Interior</h3><p>Furniture, decor and room planning.</p></a>
+<a class="dash-card" href="/party-planner"><div class="icon">✦</div><h3>Party Planner</h3><p>Food, venue and decoration planning.</p></a>
+<a class="dash-card" href="/jewelry-planner"><div class="icon">◇</div><h3>Jewelry Planner</h3><p>Occasion and outfit-aware suggestions.</p></a></div>
+<div class="section-heading row-heading"><div><span class="eyebrow">RECENT</span><h2>Your Recommendation History</h2></div><a href="/history-page">View all →</a></div><div id="recent-list" class="history-grid"><div class="loading">Loading...</div></div>
+</div></section>{% endblock %}{% block scripts %}<script>window.PocketSmart.loadDashboard();</script>{% endblock %}

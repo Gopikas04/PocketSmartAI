@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Jewelry Planner | PocketSmart AI{% endblock %}
+{% block content %}<section class="planner-page"><div class="container planner-container"><div class="planner-header"><span class="eyebrow">JEWELRY BUDGET PLANNER</span><h1>Find jewelry that fits your occasion and style.</h1><p>Describe your outfit or optionally upload an image so Gemini can consider broad color and aesthetic coordination.</p></div>
+<form id="jewelry-form" class="planner-card" enctype="multipart/form-data"><div class="form-grid two"><label>Total budget (₹)<input type="number" name="budget" min="1" required></label>
+<label>Occasion<select name="occasion"><option>Wedding</option><option>Engagement</option><option>Party</option><option>Festival</option><option>Office</option><option>Date Night</option><option>Other</option></select></label>
+<label>Style<select name="style"><option>Elegant</option><option>Minimal</option><option>Traditional</option><option>Contemporary</option><option>Statement</option></select></label>
+<label>Outfit image (optional)<input type="file" name="outfit_image" accept="image/png,image/jpeg,image/webp"><small>JPG, PNG or WEBP, max 8 MB.</small></label></div>
+<label>Outfit description<textarea name="outfit_description" rows="3" placeholder="Example: dark blue saree with silver border..."></textarea></label>
+<label>Additional notes<textarea name="notes" rows="3" placeholder="Metal preference, stones, must-have style..."></textarea></label><div id="jewelry-message" class="form-message"></div>
+<button class="btn btn-primary full">Generate Jewelry Recommendations</button></form></div></section>{% endblock %}
+{% block scripts %}<script>window.PocketSmart.initJewelryPlanner();</script>{% endblock %}

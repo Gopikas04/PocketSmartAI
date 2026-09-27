@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}PocketSmart AI{% endblock %}</title>
+<meta name="description" content="PocketSmart AI smart budget and recommendation assistant">
+<link rel="stylesheet" href="/static/css/styles.css"></head><body>
+<header class="site-header"><a class="brand" href="/"><span class="brand-mark">P</span><span>PocketSmart<span class="brand-ai">AI</span></span></a>
+<nav class="nav"><a href="/">Home</a><a href="/testimonials">Testimonials</a>
+{% if user %}<a href="/dashboard">Dashboard</a><a href="/history-page">History</a><a class="nav-cta" href="/logout">Logout</a>
+{% else %}<a href="/login">Login</a><a class="nav-cta" href="/register">Get Started</a>{% endif %}</nav></header>
+<main>{% block content %}{% endblock %}</main>
+<footer class="footer"><div class="container footer-inner"><div><div class="brand footer-brand"><span class="brand-mark">P</span><span>PocketSmart<span class="brand-ai">AI</span></span></div><p>Smart budget planning and personalized recommendations for everyday decisions.</p></div>
+<div class="footer-links"><a href="/home-planner">Home Planner</a><a href="/party-planner">Party Planner</a><a href="/jewelry-planner">Jewelry Planner</a><a href="/history-page">Recommendation History</a></div></div></footer>
+<script src="/static/js/app.js"></script>{% block scripts %}{% endblock %}</body></html>

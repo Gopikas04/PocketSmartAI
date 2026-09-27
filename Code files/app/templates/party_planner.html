@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Party Planner | PocketSmart AI{% endblock %}
+{% block content %}<section class="planner-page"><div class="container planner-container"><div class="planner-header"><span class="eyebrow">PARTY BUDGET PLANNER</span><h1>Plan the celebration without financial guesswork.</h1><p>Enter your event details and let AI balance food, venue, decoration and entertainment.</p></div>
+<form id="party-form" class="planner-card"><div class="form-grid two"><label>Total budget (₹)<input type="number" name="budget" min="1" required></label><label>Guest count<input type="number" name="guests" min="1" required></label>
+<label>Event type<select name="event_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Anniversary</option><option>House Party</option><option>Other</option></select></label>
+<label>Food preference<select name="food_preference"><option>Mixed</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>South Indian</option><option>North Indian</option></select></label>
+<label>Location<input name="location" placeholder="Chennai"></label><label>Venue details<input name="venue_details" placeholder="Indoor, outdoor, hotel, home..."></label></div>
+<label>Additional notes<textarea name="notes" rows="4" placeholder="Theme, timing, special requirements..."></textarea></label><div id="party-message" class="form-message"></div><button class="btn btn-primary full">Generate Party Recommendations</button></form>
+</div></section>{% endblock %}{% block scripts %}<script>window.PocketSmart.initPartyPlanner();</script>{% endblock %}
